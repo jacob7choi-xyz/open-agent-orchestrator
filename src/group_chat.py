@@ -86,7 +86,7 @@ def create_group_chat(
         instructions = agent_config.get("instructions")
         if agent_config.get("facilitator") and instructions:
             instructions = instructions.replace(
-                "{{aiAgents}}", "\n\t\t".join([f"- {agent['name']}: {agent["description"]}" for agent in all_agents_config]))
+                "{{aiAgents}}", "\n\t\t".join([f"- {agent['name']}: {agent['description']}" for agent in all_agents_config]))
 
         return (ChatCompletionAgent(service_id="default",
                                     kernel=agent_kernel,
